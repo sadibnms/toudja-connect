@@ -139,7 +139,7 @@ const Index = () => {
       {/* STATS STRIP */}
       <section className="border-y hairline bg-[hsl(var(--parchment))]">
         <div className="container grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 py-16">
-          <Stat k="Fondé en" v="1985" l="à Toudja, Béjaïa" />
+          <Stat k="Fondé en" v="2016" l="à Toudja, Béjaïa" />
           <Stat k="Élèves" v="912" l="trois niveaux du secondaire" />
           <Stat k="Enseignants" v="68" l="encadrement dédié" />
           <Stat k="Réussite Bac" v="87%" l="promotion 2025" />
@@ -231,12 +231,11 @@ const Index = () => {
             </h2>
             <p className="mt-6 text-[hsl(var(--parchment))]/80 text-lg leading-relaxed">
               Au-delà des programmes, le lycée cultive une culture du débat, du sport
-              et de l'engagement. Ateliers de théâtre en tamazight, club d'astronomie
-              sous le ciel sans pollution lumineuse de Toudja, équipes de football,
+              et de l'engagement. Ateliers de théâtre en tamazight, équipes de football,
               et journées portes ouvertes en mai.
             </p>
             <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
-              {["Bibliothèque · 8 400 ouvrages","Laboratoires · physique & SVT","Salle informatique","Atelier tamazight","Club d'astronomie","Équipe de football"].map(x => (
+              {["Bibliothèque · 8 400 ouvrages","Laboratoires · physique & SVT","Salle informatique","Atelier tamazight","Équipe de football"].map(x => (
                 <li key={x} className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 mt-2 bg-accent rounded-full" />
                   <span>{x}</span>
