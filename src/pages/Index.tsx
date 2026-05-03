@@ -1,7 +1,9 @@
 import hero from "@/assets/hero-school.jpg";
-import martyrs from "@/assets/martyrs.jpg";
 import classroom from "@/assets/classroom.jpg";
 import toudja from "@/assets/toudja.jpg";
+import courtyard from "@/assets/courtyard.jpg";
+import lab from "@/assets/lab.jpg";
+import classroomEmpty from "@/assets/classroom-empty.jpg";
 
 const Logo = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 64 64" aria-label="Lycée Boudiar Ahmed & Saadi" className={className} fill="none">
@@ -117,9 +119,9 @@ const Index = () => {
           rend hommage à ce double héritage : l'instruction, et la dignité.
         </p>
         <figure className="pt-6">
-          <img src={martyrs} alt="Hommage aux martyrs Boudiar Ahmed et Saadi" loading="lazy"
-               width={1024} height={1024}
-               className="w-full max-w-md grayscale shadow-frame" />
+          <img src={courtyard} alt="La cour du lycée à Toudja" loading="lazy"
+               width={1024} height={768}
+               className="w-full shadow-frame" />
           <figcaption className="text-sm text-muted-foreground mt-4 italic">
             « Ils sont partis jeunes pour que d'autres puissent grandir. »
           </figcaption>
@@ -173,8 +175,14 @@ const Index = () => {
       <section id="vie" className="bg-[hsl(var(--ink))] text-[hsl(var(--parchment))]">
         <div className="container py-24 md:py-32 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-5">
-            <img src={classroom} alt="Salle de classe baignée de lumière" loading="lazy"
-                 width={1024} height={1024} className="w-full object-cover shadow-soft" />
+            <div className="grid grid-cols-2 gap-3">
+              <img src={classroom} alt="Salle de classe du lycée" loading="lazy"
+                   className="w-full h-48 md:h-64 object-cover shadow-soft col-span-2" />
+              <img src={lab} alt="Laboratoire de sciences" loading="lazy"
+                   className="w-full h-32 md:h-44 object-cover shadow-soft" />
+              <img src={classroomEmpty} alt="Salle de classe lumineuse" loading="lazy"
+                   className="w-full h-32 md:h-44 object-cover shadow-soft" />
+            </div>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex flex-col justify-center">
             <div className="text-xs uppercase tracking-[0.25em] text-accent mb-4">Vie scolaire</div>
