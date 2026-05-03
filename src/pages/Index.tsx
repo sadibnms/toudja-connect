@@ -39,8 +39,36 @@ const Section = ({ id, kicker, title, children }: any) => (
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-accent/40">
+      {/* TOP BANNER */}
+      <div className="fixed top-0 inset-x-0 z-50 bg-[hsl(var(--ink))] text-[hsl(var(--parchment))] text-xs">
+        <div className="container py-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
+          <span className="italic">
+            "I created this website to honor my school and prove to some teachers that school does not prove who is the best."
+          </span>
+          <span className="text-accent font-medium">— @sadi_bnms</span>
+          <span aria-hidden className="text-[hsl(var(--parchment))]/30">·</span>
+          <a
+            href="https://www.instagram.com/sadi._.istryingtofindpeace"
+            target="_blank"
+            rel="noreferrer"
+            className="text-accent hover:underline underline-offset-4"
+          >
+            Instagram
+          </a>
+          <span aria-hidden className="text-[hsl(var(--parchment))]/30">·</span>
+          <a
+            href="https://www.facebook.com/profile.php?id=61584055041584"
+            target="_blank"
+            rel="noreferrer"
+            className="text-accent hover:underline underline-offset-4"
+          >
+            Facebook
+          </a>
+        </div>
+      </div>
+
       {/* NAV */}
-      <header className="fixed top-0 inset-x-0 z-40 backdrop-blur-md bg-background/70 border-b hairline">
+      <header className="fixed top-9 inset-x-0 z-40 backdrop-blur-md bg-background/70 border-b hairline">
         <div className="container flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-3 text-foreground">
             <Logo className="w-7 h-7 text-primary" />
