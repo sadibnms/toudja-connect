@@ -48,7 +48,7 @@ const Index = () => {
           <span className="text-accent font-medium">— @sadi_bnms</span>
           <span aria-hidden className="text-[hsl(var(--parchment))]/30">·</span>
           <a
-            href="https://www.instagram.com/sadi._.istryingtofindpeace"
+            href="https://www.instagram.com/sadi._.istryingtofindpeace/"
             target="_blank"
             rel="noreferrer"
             className="text-accent hover:underline underline-offset-4"
@@ -296,7 +296,7 @@ const Index = () => {
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span>This site is created by</span>
             <a
-              href="https://www.instagram.com/sadi._.istryingtofindpeace"
+              href="https://www.instagram.com/sadi._.istryingtofindpeace/"
               target="_blank"
               rel="noreferrer"
               className="text-accent font-medium hover:underline underline-offset-4"
