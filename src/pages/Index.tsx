@@ -265,7 +265,26 @@ const Index = () => {
         <div className="border-t border-[hsl(var(--parchment))]/10">
           <div className="container py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-[hsl(var(--parchment))]/50">
             <div>© 2026 Lycée des Deux Martyrs Boudiar Ahmed & Saadi · Toudja</div>
-          <div>This site is created by <span className="text-accent font-medium">sadi_bnms</span></div>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span>This site is created by</span>
+            <a
+              href="https://www.instagram.com/sadi._.istryingtofindpeace"
+              target="_blank"
+              rel="noreferrer"
+              className="text-accent font-medium hover:underline underline-offset-4"
+            >
+              @sadi._.istryingtofindpeace
+            </a>
+            <span aria-hidden className="text-[hsl(var(--parchment))]/30">·</span>
+            <a
+              href="https://www.facebook.com/profile.php?id=61584055041584"
+              target="_blank"
+              rel="noreferrer"
+              className="text-accent font-medium hover:underline underline-offset-4"
+            >
+              Facebook
+            </a>
+          </div>
             <div className="font-display italic">In memoriam — 1954 / 1962</div>
           </div>
         </div>
