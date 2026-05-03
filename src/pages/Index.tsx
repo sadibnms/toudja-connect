@@ -41,34 +41,6 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground selection:bg-accent/40">
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-40 backdrop-blur-md bg-background/70 border-b hairline">
-        <div className="bg-[hsl(var(--ink))] text-[hsl(var(--parchment))] text-xs">
-          <div className="container py-2 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-center">
-            <p className="italic leading-snug">
-              "I created this website to honor my school and proof to some teachers that school does not proof who is the best" — <span className="text-accent font-medium not-italic">@sadi_bnms</span>
-            </p>
-            <div className="flex items-center gap-3">
-              <a
-                href="https://instagram.com/sadi_bnms"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram de sadi_bnms"
-                className="inline-flex items-center gap-1 hover:text-accent transition uppercase tracking-[0.2em] text-[10px]"
-              >
-                Instagram ↗
-              </a>
-              <span className="opacity-30">·</span>
-              <a
-                href="https://facebook.com/sadi_bnms"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook de sadi_bnms"
-                className="inline-flex items-center gap-1 hover:text-accent transition uppercase tracking-[0.2em] text-[10px]"
-              >
-                Facebook ↗
-              </a>
-            </div>
-          </div>
-        </div>
         <div className="container flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-3 text-foreground">
             <Logo className="w-7 h-7 text-primary" />
