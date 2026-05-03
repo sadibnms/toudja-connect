@@ -1,4 +1,5 @@
 import hero from "@/assets/hero-school.jpg";
+import { useState } from "react";
 import classroom from "@/assets/classroom.jpg";
 import toudja from "@/assets/toudja.jpg";
 import courtyard from "@/assets/courtyard.jpg";
@@ -37,11 +38,13 @@ const Section = ({ id, kicker, title, children }: any) => (
 );
 
 const Index = () => {
+  const [bannerOpen, setBannerOpen] = useState(true);
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-accent/40">
       {/* TOP BANNER */}
+      {bannerOpen && (
       <div className="fixed top-0 inset-x-0 z-50 bg-[hsl(var(--ink))] text-[hsl(var(--parchment))] text-xs">
-        <div className="container py-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
+        <div className="container py-2 pr-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center relative">
           <span className="italic">
             "I created this website to honor my school and prove to some teachers that school does not prove who is the best."
           </span>
@@ -64,11 +67,20 @@ const Index = () => {
           >
             Facebook
           </a>
+          <button
+            type="button"
+            onClick={() => setBannerOpen(false)}
+            aria-label="Dismiss banner"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 inline-flex items-center justify-center rounded-full border border-[hsl(var(--parchment))]/40 text-[hsl(var(--parchment))] hover:bg-accent hover:text-accent-foreground hover:border-accent transition"
+          >
+            ×
+          </button>
         </div>
       </div>
+      )}
 
       {/* NAV */}
-      <header className="fixed top-9 inset-x-0 z-40 backdrop-blur-md bg-background/70 border-b hairline">
+      <header className={`fixed ${bannerOpen ? "top-9" : "top-0"} inset-x-0 z-40 backdrop-blur-md bg-background/70 border-b hairline transition-all`}>
         <div className="container flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-3 text-foreground">
             <Logo className="w-7 h-7 text-primary" />
