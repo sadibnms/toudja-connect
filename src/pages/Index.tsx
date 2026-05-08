@@ -1,5 +1,6 @@
 import hero from "@/assets/hero-school.jpg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import classroom from "@/assets/classroom.jpg";
 import toudja from "@/assets/toudja.jpg";
 import courtyard from "@/assets/courtyard.jpg";
@@ -39,6 +40,7 @@ const Section = ({ id, kicker, title, children }: any) => (
 
 const Index = () => {
   const [bannerOpen, setBannerOpen] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-accent/40">
       {/* TOP BANNER */}
@@ -93,13 +95,40 @@ const Index = () => {
             <a href="#histoire" className="hover:text-primary transition">Histoire</a>
             <a href="#vie" className="hover:text-primary transition">Vie scolaire</a>
             <a href="#filieres" className="hover:text-primary transition">Filières</a>
-            <a href="#actualites" className="hover:text-primary transition">Actualités</a>
+            <Link to="/news" className="hover:text-primary transition">Actualités</Link>
             <a href="#contact" className="hover:text-primary transition">Contact</a>
           </nav>
-          <a href="#contact" className="hidden md:inline-flex items-center text-xs uppercase tracking-[0.2em] border border-foreground/20 px-4 py-2 hover:bg-foreground hover:text-background transition">
-            Inscription
-          </a>
+          <div className="flex items-center gap-3">
+            <a href="#contact" className="hidden md:inline-flex items-center text-xs uppercase tracking-[0.2em] border border-foreground/20 px-4 py-2 hover:bg-foreground hover:text-background transition">
+              Inscription
+            </a>
+            <button
+              type="button"
+              className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8"
+              onClick={() => setMobileMenuOpen((o) => !o)}
+              aria-label="Toggle navigation"
+              aria-expanded={mobileMenuOpen}
+            >
+              <span className={`block w-5 h-px bg-foreground origin-center transition-transform duration-200 ${mobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
+              <span className={`block w-5 h-px bg-foreground transition-opacity duration-200 ${mobileMenuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-5 h-px bg-foreground origin-center transition-transform duration-200 ${mobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
+            </button>
+          </div>
         </div>
+        {mobileMenuOpen && (
+          <nav className="md:hidden border-t hairline bg-background/95 backdrop-blur-md">
+            <div className="container py-5 flex flex-col gap-5 text-sm">
+              <a href="#histoire" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition">Histoire</a>
+              <a href="#vie" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition">Vie scolaire</a>
+              <a href="#filieres" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition">Filières</a>
+              <Link to="/news" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition">Actualités</Link>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition">Contact</a>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="mt-1 inline-flex w-fit items-center text-xs uppercase tracking-[0.2em] border border-foreground/20 px-4 py-2 hover:bg-foreground hover:text-background transition">
+                Inscription
+              </a>
+            </div>
+          </nav>
+        )}
       </header>
 
       {/* HERO */}
@@ -253,7 +282,7 @@ const Index = () => {
             <div className="text-xs uppercase tracking-[0.25em] text-primary mb-4">Journal</div>
             <h2 className="font-display text-4xl md:text-5xl">Actualités du lycée</h2>
           </div>
-          <a href="#" className="hidden md:inline text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-primary">Toutes les actualités →</a>
+          <Link to="/news" className="hidden md:inline text-xs uppercase tracking-[0.2em] text-foreground/60 hover:text-primary">Toutes les actualités →</Link>
         </div>
         <div className="grid md:grid-cols-3 gap-px bg-foreground/10">
           {[
